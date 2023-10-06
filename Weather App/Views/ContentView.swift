@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var locationManager = LocationManager()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            WelcomeView()
+                .environmentObject(locationManager)
         }
-        .padding()
+        .background(Color(hue: 0.704, saturation: 0.973, brightness: 0.921))
+        .preferredColorScheme(.dark)
     }
 }
 
